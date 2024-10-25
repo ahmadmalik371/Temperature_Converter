@@ -2,7 +2,7 @@ import streamlit as st
 
 # Page configuration
 st.set_page_config(
-    page_title="Temperature Converter",
+    page_title="Stylish Temperature Converter",
     page_icon="🌡️",
     layout="centered",
     initial_sidebar_state="auto",
@@ -13,32 +13,33 @@ st.markdown(
     """
     <style>
     @keyframes backgroundAnimation {
-        0% { background-color: #87CEFA; }
-        50% { background-color: #FF6347; }
-        100% { background-color: #87CEFA; }
+        0% { background-color: #ff7e5f; }
+        50% { background-color: #feb47b; }
+        100% { background-color: #ff7e5f; }
     }
     .main {
-        background: linear-gradient(270deg, #87CEFA, #FF6347);
-        animation: backgroundAnimation 10s ease infinite;
+        background: linear-gradient(270deg, #ff7e5f, #feb47b);
+        animation: backgroundAnimation 5s ease infinite;
         color: #FFFFFF;
         min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
     .temp-output {
         font-size: 2rem;
-        padding: 15px;
-        border-radius: 10px;
-        margin: 10px 0;
+        padding: 20px;
+        border-radius: 15px;
+        margin: 15px 0;
         text-align: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         opacity: 0;
         animation: fadeIn 0.5s forwards;
     }
     @keyframes fadeIn {
         from { opacity: 0; }
         to { opacity: 1; }
-    }
-    .temp-output:hover {
-        transform: scale(1.05);
     }
     .cold {
         background-color: rgba(30, 144, 255, 0.8);
@@ -51,18 +52,18 @@ st.markdown(
     }
     .button {
         background-color: #FFFFFF;
-        color: #FF6347;
+        color: #ff7e5f;
         border: none;
-        border-radius: 5px;
-        padding: 10px 20px;
+        border-radius: 10px;
+        padding: 15px 30px;
         font-size: 1.2rem;
         cursor: pointer;
         transition: background-color 0.3s, transform 0.3s;
     }
     .button:hover {
-        background-color: #FF6347;
+        background-color: #ff7e5f;
         color: #FFFFFF;
-        transform: scale(1.05);
+        transform: scale(1.1);
     }
     </style>
     """,
@@ -70,7 +71,7 @@ st.markdown(
 )
 
 # Title
-st.title("🌡️ Temperature Converter")
+st.title("🌡️ Stylish Temperature Converter")
 
 # Input section
 col1, col2 = st.columns(2)
