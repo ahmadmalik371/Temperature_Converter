@@ -15,7 +15,8 @@ st.markdown(
     @keyframes backgroundAnimation {
         0% { background-color: #FF5733; }
         50% { background-color: #FFC300; }
-        100% { background-color: #FF5733; }
+        100% { background-color: #FF573; }
+        
     }
     .main {
         background: linear-gradient(135deg, #FF5733, #FFC300);
