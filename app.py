@@ -77,6 +77,12 @@ st.markdown(
         text-align: center;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         margin-top: 20px;
+        animation: gradientTransition 5s ease infinite alternate;
+    }
+    @keyframes gradientTransition {
+        0% { background: #ff7e5f; }
+        50% { background: #feb47b; }
+        100% { background: #ff7e5f; }
     }
     .footer p {
         font-size: 1.5rem;
@@ -97,10 +103,12 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.header("Input Temperature")
-    celsius = st.slider("Select temperature in Celsius:", -100.0, 100.0, 25.0)
+    celsius = st.slider("Select temperature in Celsius:", -100.0, 100.0, 25.0, key="celsius_slider")
 
 with col2:
     st.header("Convert To")
+    
+    # Convert button
     if st.button("Convert"):
         # Convert to Fahrenheit and Kelvin
         fahrenheit = (celsius * 9/5) + 32
@@ -120,12 +128,17 @@ with col2:
         st.write(f'<div class="temp-output {get_temp_class(celsius)}">Celsius: {celsius:.2f} °C</div>', unsafe_allow_html=True)
         st.write(f'<div class="temp-output {get_temp_class(celsius)}">Fahrenheit: {fahrenheit:.2f} °F</div>', unsafe_allow_html=True)
         st.write(f'<div class="temp-output {get_temp_class(celsius)}">Kelvin: {kelvin:.2f} K</div>', unsafe_allow_html=True)
+    
+    # Refresh button
+    if st.button("Refresh"):
+        st.session_state.celsius_slider = 25.0  # Reset slider to default
+        st.experimental_rerun()  # Refresh the app
 
 # Enhanced footer
 st.markdown(
     """
     <div class="footer">
-        <p>Made with ❤️ using Streamlit</p>
+        <p>Designed to get temperature in different units</p>
     </div>
     """,
     unsafe_allow_html=True,
