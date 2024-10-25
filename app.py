@@ -13,25 +13,29 @@ st.markdown(
     """
     <style>
     @keyframes backgroundAnimation {
-        0% { background-color: #ff7e5f; }
-        50% { background-color: #feb47b; }
-        100% { background-color: #ff7e5f; }
+        0% { background-color: #FF5733; }
+        50% { background-color: #FFC300; }
+        100% { background-color: #FF5733; }
     }
     .main {
-        background: linear-gradient(270deg, #ff7e5f, #feb47b);
+        background: linear-gradient(135deg, #FF5733, #FFC300);
         animation: backgroundAnimation 5s ease infinite;
         color: #FFFFFF;
         min-height: 100vh;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
+    }
+    h1 {
+        font-size: 3rem;
+        text-shadow: 2px 2px #000;
     }
     .temp-output {
         font-size: 2rem;
         padding: 20px;
-        border-radius: 15px;
-        margin: 15px 0;
+        border-radius: 10px;
+        margin: 10px 0;
         text-align: center;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         opacity: 0;
@@ -52,18 +56,33 @@ st.markdown(
     }
     .button {
         background-color: #FFFFFF;
-        color: #ff7e5f;
+        color: #FF5733;
         border: none;
-        border-radius: 10px;
+        border-radius: 5px;
         padding: 15px 30px;
         font-size: 1.2rem;
         cursor: pointer;
         transition: background-color 0.3s, transform 0.3s;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
     .button:hover {
-        background-color: #ff7e5f;
+        background-color: #FF5733;
         color: #FFFFFF;
-        transform: scale(1.1);
+        transform: scale(1.05);
+    }
+    .footer {
+        background: linear-gradient(135deg, #ff7e5f, #feb47b);
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        margin-top: 20px;
+    }
+    .footer p {
+        font-size: 1.5rem;
+        color: #fff;
+        margin: 0;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     }
     </style>
     """,
@@ -102,12 +121,12 @@ with col2:
         st.write(f'<div class="temp-output {get_temp_class(celsius)}">Fahrenheit: {fahrenheit:.2f} °F</div>', unsafe_allow_html=True)
         st.write(f'<div class="temp-output {get_temp_class(celsius)}">Kelvin: {kelvin:.2f} K</div>', unsafe_allow_html=True)
 
-# Adding a footer
+# Enhanced footer
 st.markdown(
     """
-    <footer style='text-align: center; margin-top: 20px;'>
-        <p style='color: white;'>Made with ❤️ using Streamlit</p>
-    </footer>
+    <div class="footer">
+        <p>Made with ❤️ using Streamlit</p>
+    </div>
     """,
     unsafe_allow_html=True,
 )
