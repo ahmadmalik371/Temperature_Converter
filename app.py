@@ -15,8 +15,7 @@ st.markdown(
     @keyframes backgroundAnimation {
         0% { background-color: #FF5733; }
         50% { background-color: #FFC300; }
-        100% { background-color: #FF573; }
-        
+        100% { background-color: #FF5733; }
     }
     .main {
         background: linear-gradient(135deg, #FF5733, #FFC300);
@@ -129,11 +128,6 @@ with col2:
         st.write(f'<div class="temp-output {get_temp_class(celsius)}">Celsius: {celsius:.2f} °C</div>', unsafe_allow_html=True)
         st.write(f'<div class="temp-output {get_temp_class(celsius)}">Fahrenheit: {fahrenheit:.2f} °F</div>', unsafe_allow_html=True)
         st.write(f'<div class="temp-output {get_temp_class(celsius)}">Kelvin: {kelvin:.2f} K</div>', unsafe_allow_html=True)
-    
-    # Refresh button
-    if st.button("Refresh"):
-        st.session_state.celsius_slider = 25.0  # Reset slider to default
-        st.experimental_rerun()  # Refresh the app
 
 # Enhanced footer
 st.markdown(
