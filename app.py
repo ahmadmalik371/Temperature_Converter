@@ -8,6 +8,18 @@ st.set_page_config(
     initial_sidebar_state="auto",
 )
 
+# Hide the refresh button and other Streamlit elements
+st.markdown(
+    """
+    <style>
+    #MainMenu {visibility: hidden;}  /* Hide the hamburger menu */
+    footer {visibility: hidden;}      /* Hide the footer */
+    header {visibility: hidden;}      /* Hide the header */
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 # CSS for custom styles
 st.markdown(
     """
