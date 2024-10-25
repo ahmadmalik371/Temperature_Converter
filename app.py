@@ -18,7 +18,7 @@ st.markdown(
         100% { background-color: #87CEFA; }
     }
     .main {
-        background: linear-gradient(to right, #87CEFA, #FF6347);
+        background: linear-gradient(270deg, #87CEFA, #FF6347);
         animation: backgroundAnimation 10s ease infinite;
         color: #FFFFFF;
         min-height: 100vh;
@@ -41,13 +41,13 @@ st.markdown(
         transform: scale(1.05);
     }
     .cold {
-        background-color: #1E90FF;
+        background-color: rgba(30, 144, 255, 0.8);
     }
     .warm {
-        background-color: #FFD700;
+        background-color: rgba(255, 215, 0, 0.8);
     }
     .hot {
-        background-color: #FF4500;
+        background-color: rgba(255, 69, 0, 0.8);
     }
     .button {
         background-color: #FFFFFF;
