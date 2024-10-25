@@ -44,4 +44,50 @@ st.markdown("""
         padding: 10px 20px;
         font-size: 1.2rem;
         cursor: pointer;
-        transition: background-color 0.
+        transition: background-color 0.3s;
+    }
+    .button:hover {
+        background-color: #FF6347;
+        color: #FFFFFF;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# Title
+st.title("🌡️ Temperature Converter")
+
+# Input section
+col1, col2 = st.columns(2)
+
+with col1:
+    st.header("Input Temperature")
+    celsius = st.slider("Select temperature in Celsius:", -100.0, 100.0, 25.0)
+
+with col2:
+    st.header("Convert To")
+    if st.button("Convert"):
+        # Convert to Fahrenheit and Kelvin
+        fahrenheit = (celsius * 9/5) + 32
+        kelvin = celsius + 273.15
+
+        # Function to determine temperature class
+        def get_temp_class(temp_c):
+            if temp_c <= 0:
+                return "cold"
+            elif 0 < temp_c < 30:
+                return "warm"
+            else:
+                return "hot"
+
+        # Display results with color-coded boxes
+        st.write("### Converted Temperatures:")
+        st.write(f'<div class="temp-output {get_temp_class(celsius)}">Celsius: {celsius:.2f} °C</div>', unsafe_allow_html=True)
+        st.write(f'<div class="temp-output {get_temp_class(celsius)}">Fahrenheit: {fahrenheit:.2f} °F</div>', unsafe_allow_html=True)
+        st.write(f'<div class="temp-output {get_temp_class(celsius)}">Kelvin: {kelvin:.2f} K</div>', unsafe_allow_html=True)
+
+# Adding a footer
+st.markdown("""
+    <footer style='text-align: center; margin-top: 20px;'>
+        <p style='color: white;'>Made with ❤️ using Streamlit</p>
+    </footer>
+""", unsafe_allow_html=True)
