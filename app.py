@@ -30,4 +30,14 @@ st.markdown("""
         text-align: center;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
         opacity: 0;
-        animation: fadeIn 0.5s 
+        animation: fadeIn 0.5s forwards;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    .temp-output:hover {
+        transform: scale(1.05);
+    }
+    .cold {
+        background-color: #1E9
